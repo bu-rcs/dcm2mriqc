@@ -12,7 +12,7 @@ mriqc /tmp/bids/ /tmp/derivatives/ participant -w /tmp/work/ --no-sub --notrack 
 
 # step 6 -- place mriqc output to XNAT
 mv /tmp/derivatives/sub-01*.html /output/mriqc_report.html
-mv /tmp/derivatives/sub-01/* /output/
+mv /tmp/derivatives/sub-01 /output/
 
 # step 7 -- cleanup
 rm -Rf /tmp/bids
