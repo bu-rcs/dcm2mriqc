@@ -5,7 +5,9 @@
     "schema-version": "1.0",
     "image": "kkurkela92/dcm2mriqc:latest",
     "type": "docker",
+    "limit-cpu": "4",
     "command-line": "bash pipeline.sh",
+    "reserve-memory": "10000",
     "override-entrypoint": true,
     "mounts": [
       {
