@@ -23,7 +23,7 @@ The container and pipeline are designed to build upon mriqc. The pipeline runs [
 
 ## What is a bids_config.json file? How do I create one and how do I uploaded it to XNAT?
 
-A bids_config.json file is a json file that controls how the dcm2bids translates DICOM header information into BIDS "types". For a deeper dive into this file and how it works, see the [dcm2bids documentation](https://unfmontreal.github.io/Dcm2Bids/3.2.0/).
+A bids_config.json file is a json file that controls how the dcm2bids translates DICOM header information into BIDS "types". For a deeper dive into this file and how it works, see the [dcm2bids documentation](https://unfmontreal.github.io/Dcm2Bids/3.2.0/how-to/create-config-file/).
 
 An example bids_config.json file appears below.
 
