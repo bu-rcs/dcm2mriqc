@@ -19,3 +19,5 @@ The container and pipeline are designed to build upon mriqc. The pipeline runs [
 4. Step 4 -- move the QA reports to the mounted `/output` directory within the container so that the reports are uploaded back to the XNAT server.
 5. Step 5 -- clean up the `/tmp` directory, removing all intermediate files created during the process.
 
+`download_bidsconfig.py` -- a python script that borrows heavily from the script `dcm2bids_wholeSession.py` contained within the [xnat/dcm2bids-session container on dockerhub](https://hub.docker.com/r/xnat/dcm2bids-session). The script downloads the bids_config.json file using the [Legacy XNAT Site Configuration API](https://wiki.xnat.org/xnat-api/legacy-xnat-site-configuration-api).
+
