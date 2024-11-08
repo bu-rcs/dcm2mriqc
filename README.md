@@ -21,3 +21,47 @@ The container and pipeline are designed to build upon mriqc. The pipeline runs [
 
 `download_bidsconfig.py` -- a python script that borrows heavily from the script `dcm2bids_wholeSession.py` contained within the [xnat/dcm2bids-session container on dockerhub](https://hub.docker.com/r/xnat/dcm2bids-session). The script downloads the bids_config.json file using the [Legacy XNAT Site Configuration API](https://wiki.xnat.org/xnat-api/legacy-xnat-site-configuration-api).
 
+## What is a bids_config.json file? How do I create one and how do I uploaded it to XNAT?
+
+A bids_config.json file is a json file that controls how the dcm2bids translates DICOM header information into BIDS "types". For a deeper dive into this file and how it works, see the [dcm2bids documentation](https://unfmontreal.github.io/Dcm2Bids/3.2.0/).
+
+An example bids_config.json file appears below.
+
+```
+{
+    "descriptions": [
+      {
+        "datatype": "func",
+        "suffix": "bold",
+        "custom_entities": "task-rest",
+        "criteria": {
+          "SeriesDescription": "REST*"
+        },
+        "sidecar_changes": {
+          "TaskName": "rest"
+        }        
+      },
+      {
+        "datatype": "anat",
+        "suffix": "T1w",
+        "criteria": {
+          "SeriesDescription": "MPRAGE*"
+        }
+      }
+    ]
+  }  
+```
+
+`datatype` = the bids 
+`suffix` = 
+`custom_entities` = additional information that is added to the BIDS filename. For functional BOLDS images, BIDS requires an entry defining the name of the task.
+`criteria` = a group of key:values that correspond to the header information contained within the DICOM files. These are used to uniquely identify the scan to map it to the BIDS filename format defined using `datatype`, `suffix`, and `custom_entities`.
+`sidecar_changes` = additional entries into the `json` sidecar files that are created alongside the NIFTI files. Functional BOLD scans, for example, are required to have an entry "TaskName" in their json sidecar.
+
+Once your create a bids_config.json file, you can upload that file to your XNAT server by running the following curl commands:
+
+`curl --location-trusted -u USERNAME --file-upload BIDS_CONFIG.JSON -X PUT YOURXNAT/data/config/bids/bidsmap?json=TRUE`
+
+which assumes that your bids_config.json file is in your present working directory. You will have to enter your XNAT password after invoking this command. If there is not a bids entry within /data/config, it will be created. If there is already a bidsmap file at `/data/config/bids/bidsmap`, that file will be overwritten with the current one.
+
+You can pull down the latest version
