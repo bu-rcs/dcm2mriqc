@@ -52,16 +52,16 @@ An example bids_config.json file appears below.
   }  
 ```
 
-`datatype` = the bids 
-`suffix` = 
-`custom_entities` = additional information that is added to the BIDS filename. For functional BOLDS images, BIDS requires an entry defining the name of the task.
+`datatype` = the bids  
+`suffix` =  
+`custom_entities` = additional information that is added to the BIDS filename. For functional BOLDS images, BIDS requires an entry defining the name of the task.  
 `criteria` = a group of key:values that correspond to the header information contained within the DICOM files. These are used to uniquely identify the scan to map it to the BIDS filename format defined using `datatype`, `suffix`, and `custom_entities`.
-`sidecar_changes` = additional entries into the `json` sidecar files that are created alongside the NIFTI files. Functional BOLD scans, for example, are required to have an entry "TaskName" in their json sidecar.
-
-Once your create a bids_config.json file, you can upload that file to your XNAT server by running the following curl commands:
-
-`curl --location-trusted -u USERNAME --file-upload BIDS_CONFIG.JSON -X PUT YOURXNAT/data/config/bids/bidsmap?json=TRUE`
-
-which assumes that your bids_config.json file is in your present working directory. You will have to enter your XNAT password after invoking this command. If there is not a bids entry within /data/config, it will be created. If there is already a bidsmap file at `/data/config/bids/bidsmap`, that file will be overwritten with the current one.
-
-You can pull down the latest version
+`sidecar_changes` = additional entries into the `json` sidecar files that are created alongside the NIFTI files. Functional BOLD scans, for example, are required to have an entry "TaskName" in their json sidecar.  
+  
+Once your create a bids_config.json file, you can upload that file to your XNAT server by running the following curl commands:  
+  
+`curl --location-trusted -u USERNAME --file-upload BIDS_CONFIG.JSON -X PUT YOURXNAT/data/config/bids/bidsmap?json=TRUE`  
+  
+which assumes that your bids_config.json file is in your present working directory. You will have to enter your XNAT password after invoking this command. If there is not a bids entry within /data/config, it will be created. If there is already a bidsmap file at `/data/config/bids/bidsmap`, that file will be overwritten with the current one.  
+  
+You can pull down the latest version  
