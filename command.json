@@ -6,7 +6,7 @@
     "image": "kkurkela92/dcm2mriqc:latest",
     "type": "docker",
     "limit-cpu": "4",
-    "command-line": "bash pipeline.sh #MRIQC_ARGS#",
+    "command-line": "bash pipeline.sh '#MRIQC_ARGS#'",
     "reserve-memory": "10000",
     "override-entrypoint": true,
     "mounts": [
