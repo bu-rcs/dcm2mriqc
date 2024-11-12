@@ -8,7 +8,7 @@ dcm2bids -d /input/DICOM -p 01 -c bids_config.json -o /tmp/bids
 
 # step 3 -- run mriqc
 NCORES=`nproc --all`
-mriqc /tmp/bids/ /tmp/derivatives/ participant -w /tmp/work/ --no-sub --notrack --nprocs $NCORES --omp-nthreads $NCORES
+mriqc /tmp/bids/ /tmp/derivatives/ participant -w /tmp/work/ --no-sub --notrack --nprocs $NCORES --omp-nthreads $NCORES $1
 
 # step 6 -- place mriqc output to XNAT
 mv /tmp/derivatives/sub-01*.html /output/mriqc_report.html

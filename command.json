@@ -23,7 +23,17 @@
     ],
     "environment-variables": {},
     "ports": {},
-    "inputs": [],
+    "inputs": [
+      {
+        "name": "mriqc-arguments",
+        "description": "Arguments to pass to mriqc",
+        "type": "string",
+        "default-value": "-fd 0.2",
+       	"required": false,
+        "replacement-key": "#MRIQC_ARGS#",
+        "select-values": []
+      }
+    ],
     "outputs": [
       {
         "name": "output",
