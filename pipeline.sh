@@ -21,7 +21,7 @@ dcm2bids -d /input/DICOM -p subject -c bids_config.json -o /tmp/bids
 # step 3 -- run mriqc
 
 # number of available cores
-NCORES=`nproc --all
+NCORES=`nproc --all`
 
 # make a output subdirectory for one click downloading
 mkdir /output/report
