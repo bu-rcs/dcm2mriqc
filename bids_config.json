@@ -15,7 +15,7 @@
         "datatype": "anat",
         "suffix": "T1w",
         "criteria": {
-          "SeriesDescription": "MPRAGE*"
+          "SeriesDescription": "*MPRAGE*"
         }
       }
     ]
