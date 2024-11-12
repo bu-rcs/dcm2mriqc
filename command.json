@@ -28,7 +28,7 @@
         "name": "mriqc-arguments",
         "description": "Arguments to pass to mriqc",
         "type": "string",
-        "default-value": "--fd_thres 0.2",
+        "default-value": "",
        	"required": false,
         "replacement-key": "#MRIQC_ARGS#",
         "select-values": []
