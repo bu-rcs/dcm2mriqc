@@ -1,0 +1,22 @@
+{
+    "descriptions": [
+      {
+        "datatype": "func",
+        "suffix": "bold",
+        "custom_entities": "task-rest",
+        "criteria": {
+          "SeriesDescription": "REST*"
+        },
+        "sidecar_changes": {
+          "TaskName": "rest"
+        }
+      },
+      {
+        "datatype": "anat",
+        "suffix": "T1w",
+        "criteria": {
+          "SeriesDescription": "MPRAGE*"
+        }
+      }
+    ]
+}
