@@ -30,4 +30,4 @@ mkdir /output/report
 mriqc /tmp/bids/ /output/report/ participant -w /tmp/work/ --no-sub --notrack --nprocs $NCORES --omp-nthreads $NCORES $1
 
 # rename the report to make it clear what it is
-mv /output/report/sub-subject.html /output/report/mriqc_report.html
+mv /output/report/sub-subject*.html /output/report/mriqc_report.html
